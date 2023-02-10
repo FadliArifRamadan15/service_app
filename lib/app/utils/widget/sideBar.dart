@@ -80,8 +80,8 @@ class SideBar extends StatelessWidget {
                               : const BoxDecoration(),
                           child: Icon(
                             Get.currentRoute == '/service'
-                                ? Ionicons.build
-                                : Ionicons.build_outline,
+                                ? Ionicons.construct
+                                : Ionicons.construct_outline,
                             color: Colors.grey,
                           ),
                         ),
