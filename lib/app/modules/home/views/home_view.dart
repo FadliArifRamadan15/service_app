@@ -204,38 +204,118 @@ class HomeView extends GetView<HomeController> {
                         ),
                         Row(
                           children: [
-                            Expanded(
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Daftar Service',
-                                    style: TextStyle(
-                                        color: AppColors.PrimaryText,
-                                        fontSize: 25),
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Expanded(
-                              child: Column(
-                                children: [
-                                  Text(
-                                    'Daftar Service',
-                                    style: TextStyle(
-                                        color: AppColors.PrimaryText,
-                                        fontSize: 25),
-                                  ),
-                                  SizedBox(
-                                    height: 20,
-                                  ),
-                                ],
-                              ),
+                            Column(
+                              children: [
+                                Text(
+                                  'Daftar Service',
+                                  style: TextStyle(
+                                      color: AppColors.PrimaryText,
+                                      fontSize: 25),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                              ],
                             ),
                           ],
                         ),
+
+                        Container(
+                          // padding: EdgeInsets.all(20),
+                          child: Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    width: 150,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                        color: AppColors.SecondaryBg),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(Ionicons.logo_android, size: 60),
+                                        Text(
+                                          "Android",
+                                          style: TextStyle(fontSize: 25),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    alignment: Alignment.center,
+                                    width: 150,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                        color: AppColors.SecondaryBg),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(Ionicons.logo_apple, size: 60),
+                                        Text(
+                                          "Iphone",
+                                          style: TextStyle(fontSize: 25),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    width: 150,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                        color: AppColors.SecondaryBg),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(Ionicons.tablet_landscape_sharp,
+                                            size: 60),
+                                        Text(
+                                          "Tablet",
+                                          style: TextStyle(fontSize: 25),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    alignment: Alignment.center,
+                                    width: 150,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                        color: AppColors.SecondaryBg),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Ionicons.tablet_landscape_sharp,
+                                          size: 60,
+                                        ),
+                                        Text(
+                                          "Ipad",
+                                          style: TextStyle(fontSize: 25),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
