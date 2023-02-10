@@ -67,7 +67,8 @@ class ServiceView extends GetView<ServiceController> {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(30),
                               child: const CircleAvatar(
-                                backgroundColor: Colors.grey,
+                                foregroundImage: NetworkImage(
+                                    'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
                                 radius: 25,
                               ),
                             )
