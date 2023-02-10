@@ -21,21 +21,29 @@ class AppPages {
       name: _Paths.HOME,
       page: () => HomeView(),
       binding: HomeBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: Duration(seconds: 1),
     ),
     GetPage(
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: Duration(seconds: 1),
     ),
     GetPage(
       name: _Paths.SERVICE,
       page: () => ServiceView(),
       binding: ServiceBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: Duration(seconds: 1),
     ),
     GetPage(
       name: _Paths.PROFILE,
       page: () => ProfileView(),
       binding: ProfileBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: Duration(seconds: 1),
     ),
   ];
 }
