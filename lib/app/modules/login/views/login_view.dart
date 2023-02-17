@@ -98,12 +98,15 @@ class LoginView extends GetView<LoginController> {
                         height: Get.height * 0.6,
                       ),
                       FloatingActionButton.extended(
-                        backgroundColor: Colors.yellow,
+                        backgroundColor: AppColors.PrimaryBg,
                         onPressed: () => Get.toNamed(Routes.HOME),
-                        label: const Text('Masuk Akun Google'),
+                        label: const Text(
+                          'Masuk Akun Google',
+                          style: TextStyle(color: Colors.grey),
+                        ),
                         icon: const Icon(
                           Ionicons.logo_google,
-                          color: Colors.white,
+                          color: Colors.grey,
                         ),
                       )
                     ]),
