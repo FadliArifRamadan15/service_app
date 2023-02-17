@@ -17,170 +17,174 @@ class ProfileView extends GetView<ProfileController> {
       key: _drawerKey,
       drawer: const SideBar(),
       backgroundColor: AppColors.PrimaryBg,
-      body: Row(
-        children: [
-          // sideBar
-          !context.isPhone
-              ? const Expanded(
-                  flex: 2,
-                  child: SideBar(),
-                )
-              : const SizedBox(),
-          // header
-          Expanded(
-            flex: 15,
-            child: Column(
-              children: [
-                !context.isPhone
-                    ? const header()
-                    : Container(
-                        padding: const EdgeInsets.all(20),
-                        child: Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                _drawerKey.currentState!.openDrawer();
-                              },
-                              icon: const Icon(
-                                Icons.menu,
-                                color: AppColors.PrimaryText,
+      body: SafeArea(
+        child: Row(
+          children: [
+            // sideBar
+            !context.isPhone
+                ? const Expanded(
+                    flex: 2,
+                    child: SideBar(),
+                  )
+                : const SizedBox(),
+            // header
+            Expanded(
+              flex: 15,
+              child: Column(
+                children: [
+                  !context.isPhone
+                      ? const header()
+                      : Container(
+                          padding: const EdgeInsets.all(20),
+                          child: Row(
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  _drawerKey.currentState!.openDrawer();
+                                },
+                                icon: const Icon(
+                                  Icons.menu,
+                                  color: AppColors.PrimaryText,
+                                ),
                               ),
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
-                                Text(
-                                  'PonselMart',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      color: AppColors.PrimaryText),
-                                ),
-                                Text(
-                                  'Service Gadgetmu disini!',
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: AppColors.PrimaryText),
-                                ),
-                              ],
-                            ),
-                            const Spacer(),
-                            GestureDetector(
-                              onTap: () {
-                                Get.defaultDialog(
-                                  title: 'Sign Out',
-                                  content:
-                                      const Text('Apa kau yakin ingin keluar?'),
-                                  cancel: ElevatedButton(
-                                    onPressed: () => Get.back(),
-                                    child: const Text('Tidak'),
-                                  ),
-                                  confirm: ElevatedButton(
-                                    onPressed: () => Get.toNamed(Routes.LOGIN),
-                                    child: const Text('Ya'),
-                                  ),
-                                );
-                              },
-                              child: Row(
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: const [
                                   Text(
-                                    'Sign Out',
-                                    style:
-                                        TextStyle(color: AppColors.PrimaryText),
+                                    'PonselMart',
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: AppColors.PrimaryText),
                                   ),
-                                  SizedBox(
-                                    width: 5,
+                                  Text(
+                                    'Service Gadgetmu disini!',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        color: AppColors.PrimaryText),
                                   ),
-                                  Icon(Ionicons.log_out_outline,
-                                      color: Colors.grey),
                                 ],
                               ),
+                              const Spacer(),
+                              GestureDetector(
+                                onTap: () {
+                                  Get.defaultDialog(
+                                    title: 'Sign Out',
+                                    content: const Text(
+                                        'Apa kau yakin ingin keluar?'),
+                                    cancel: ElevatedButton(
+                                      onPressed: () => Get.back(),
+                                      child: const Text('Tidak'),
+                                    ),
+                                    confirm: ElevatedButton(
+                                      onPressed: () =>
+                                          Get.toNamed(Routes.LOGIN),
+                                      child: const Text('Ya'),
+                                    ),
+                                  );
+                                },
+                                child: Row(
+                                  children: const [
+                                    Text(
+                                      'Sign Out',
+                                      style: TextStyle(
+                                          color: AppColors.PrimaryText),
+                                    ),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Icon(Ionicons.log_out_outline,
+                                        color: Colors.grey),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                  // content/isi page
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(50),
+                      margin: !context.isPhone
+                          ? const EdgeInsets.all(10)
+                          : const EdgeInsets.all(0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: !context.isPhone
+                            ? BorderRadius.circular(50)
+                            : BorderRadius.circular(20),
+                      ),
+                      child: GestureDetector(
+                        onTap: () {
+                          FocusScope.of(context).unfocus();
+                        },
+                        child: ListView(
+                          children: [
+                            Center(
+                              child: Stack(
+                                children: [
+                                  Container(
+                                    width: 130,
+                                    height: 130,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                          width: 4, color: Colors.white),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          spreadRadius: 2,
+                                          blurRadius: 10,
+                                          color: Colors.black.withOpacity(0.1),
+                                        ),
+                                      ],
+                                      shape: BoxShape.circle,
+                                      image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: NetworkImage(
+                                            'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            buildTextField('Nama Lengkap', 'Fadli Arif', false),
+                            buildTextField(
+                                'Email', 'fadliarif@gmail.com', false),
+                            buildTextField('Nomor Hp', '086321634781', false),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Column(
+                              children: [
+                                FloatingActionButton.extended(
+                                  backgroundColor: AppColors.SecondaryBg,
+                                  onPressed: () => Get.toNamed(Routes.HOME),
+                                  label: const Text(
+                                    'Simpan',
+                                    style: TextStyle(fontSize: 15),
+                                  ),
+                                  icon: const Icon(
+                                    Ionicons.save,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
                             ),
                           ],
                         ),
                       ),
-                // content/isi page
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(50),
-                    margin: !context.isPhone
-                        ? const EdgeInsets.all(10)
-                        : const EdgeInsets.all(0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: !context.isPhone
-                          ? BorderRadius.circular(50)
-                          : BorderRadius.circular(20),
-                    ),
-                    child: GestureDetector(
-                      onTap: () {
-                        FocusScope.of(context).unfocus();
-                      },
-                      child: ListView(
-                        children: [
-                          Center(
-                            child: Stack(
-                              children: [
-                                Container(
-                                  width: 130,
-                                  height: 130,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        width: 4, color: Colors.white),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        spreadRadius: 2,
-                                        blurRadius: 10,
-                                        color: Colors.black.withOpacity(0.1),
-                                      ),
-                                    ],
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          buildTextField('Nama Lengkap', 'Fadli Arif', false),
-                          buildTextField('Email', 'fadliarif@gmail.com', false),
-                          buildTextField('Nomor Hp', '086321634781', false),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Column(
-                            children: [
-                              FloatingActionButton.extended(
-                                backgroundColor: AppColors.SecondaryBg,
-                                onPressed: () => Get.toNamed(Routes.HOME),
-                                label: const Text(
-                                  'Simpan',
-                                  style: TextStyle(fontSize: 15),
-                                ),
-                                icon: const Icon(
-                                  Ionicons.save,
-                                  color: Colors.white,
-                                ),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
