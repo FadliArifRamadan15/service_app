@@ -13,9 +13,8 @@ class LoginView extends GetView<LoginController> {
     return Scaffold(
       backgroundColor: AppColors.PrimaryBg,
       body: Container(
-        margin: context.isPhone
-            ? EdgeInsets.all(Get.width * 0.1)
-            : EdgeInsets.all(Get.height * 0.1),
+        //padding: EdgeInsets.only(top: 12),
+        margin: EdgeInsets.fromLTRB(50, 150, 50, 170),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           color: Colors.yellow,
@@ -34,7 +33,7 @@ class LoginView extends GetView<LoginController> {
                         color: Colors.white,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(30.0),
+                        padding: const EdgeInsets.all(50.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -94,8 +93,8 @@ class LoginView extends GetView<LoginController> {
                             )
                           : const SizedBox(),
                       Image.asset(
-                        'assets/images/login.png',
-                        height: Get.height * 0.6,
+                        'assets/images/iconlogin.png',
+                        height: Get.height * 0.35,
                       ),
                       FloatingActionButton.extended(
                         backgroundColor: AppColors.PrimaryBg,
