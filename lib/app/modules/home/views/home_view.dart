@@ -4,6 +4,7 @@ import 'package:ionicons/ionicons.dart';
 import 'package:service_app/app/utils/style/AppColors.dart';
 import 'package:service_app/app/utils/widget/SideBar.dart';
 import 'package:service_app/app/utils/widget/header.dart';
+import '../../../routes/app_pages.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -242,7 +243,13 @@ class HomeView extends GetView<HomeController> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          Icon(Ionicons.logo_android, size: 60),
+                                          GestureDetector(
+                                              onTap: () =>
+                                                  Get.toNamed(Routes.LOGIN),
+                                              child: Icon(
+                                                Ionicons.logo_android,
+                                                size: 60,
+                                              )),
                                           Text(
                                             "Android",
                                             style: TextStyle(fontSize: 25),
