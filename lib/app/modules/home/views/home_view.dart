@@ -233,46 +233,47 @@ class HomeView extends GetView<HomeController> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Container(
-                                      alignment: Alignment.center,
-                                      width: 150,
-                                      height: 150,
-                                      decoration: BoxDecoration(
-                                          color: AppColors.SecondaryBg),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          GestureDetector(
-                                              onTap: () =>
-                                                  Get.toNamed(Routes.LOGIN),
-                                              child: Icon(
-                                                Ionicons.logo_android,
-                                                size: 60,
-                                              )),
-                                          Text(
-                                            "Android",
-                                            style: TextStyle(fontSize: 25),
-                                          ),
-                                        ],
+                                    GestureDetector(
+                                      onTap: () => Get.toNamed(Routes.LOGIN),
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        width: 150,
+                                        height: 150,
+                                        decoration: BoxDecoration(
+                                            color: AppColors.SecondaryBg),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(Ionicons.logo_android,
+                                                size: 60),
+                                            Text(
+                                              "Android",
+                                              style: TextStyle(fontSize: 25),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                    Container(
-                                      alignment: Alignment.center,
-                                      width: 150,
-                                      height: 150,
-                                      decoration: BoxDecoration(
-                                          color: AppColors.SecondaryBg),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(Ionicons.logo_apple, size: 60),
-                                          Text(
-                                            "Iphone",
-                                            style: TextStyle(fontSize: 25),
-                                          ),
-                                        ],
+                                    GestureDetector(
+                                      onTap: () => Get.toNamed(Routes.LOGIN),
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        width: 150,
+                                        height: 150,
+                                        decoration: BoxDecoration(
+                                            color: AppColors.SecondaryBg),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(Ionicons.logo_apple, size: 60),
+                                            Text(
+                                              "Iphone",
+                                              style: TextStyle(fontSize: 25),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ],
@@ -282,44 +283,51 @@ class HomeView extends GetView<HomeController> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Container(
-                                      alignment: Alignment.center,
-                                      width: 150,
-                                      height: 150,
-                                      decoration: BoxDecoration(
-                                          color: AppColors.SecondaryBg),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(Ionicons.tablet_landscape_sharp,
-                                              size: 60),
-                                          Text(
-                                            "Tablet",
-                                            style: TextStyle(fontSize: 25),
-                                          ),
-                                        ],
+                                    GestureDetector(
+                                      onTap: () => Get.toNamed(Routes.LOGIN),
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        width: 150,
+                                        height: 150,
+                                        decoration: BoxDecoration(
+                                            color: AppColors.SecondaryBg),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                                Ionicons.tablet_landscape_sharp,
+                                                size: 60),
+                                            Text(
+                                              "Tablet",
+                                              style: TextStyle(fontSize: 25),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                    Container(
-                                      alignment: Alignment.center,
-                                      width: 150,
-                                      height: 150,
-                                      decoration: BoxDecoration(
-                                          color: AppColors.SecondaryBg),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Icon(
-                                            Ionicons.tablet_landscape_sharp,
-                                            size: 60,
-                                          ),
-                                          Text(
-                                            "Ipad",
-                                            style: TextStyle(fontSize: 25),
-                                          ),
-                                        ],
+                                    GestureDetector(
+                                      onTap: () => Get.toNamed(Routes.LOGIN),
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        width: 150,
+                                        height: 150,
+                                        decoration: BoxDecoration(
+                                            color: AppColors.SecondaryBg),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Icon(
+                                              Ionicons.tablet_landscape_sharp,
+                                              size: 60,
+                                            ),
+                                            Text(
+                                              "Ipad",
+                                              style: TextStyle(fontSize: 25),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ],
