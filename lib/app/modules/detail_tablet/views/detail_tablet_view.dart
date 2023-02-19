@@ -55,7 +55,7 @@ class DetailTabletView extends GetView<DetailTabletController> {
                                         color: AppColors.PrimaryText),
                                   ),
                                   Text(
-                                    'Androidmu Disini',
+                                    'Tabletmu Disini',
                                     style: TextStyle(
                                         fontSize: 15,
                                         color: AppColors.PrimaryText),
@@ -113,7 +113,7 @@ class DetailTabletView extends GetView<DetailTabletController> {
                                 DataCell(Text('')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Layar LCD HP-mu Pecah')),
+                                DataCell(Text('Layar LCD Tablte-mu Pecah')),
                                 DataCell(Text('')),
                                 DataCell(Text('')),
                               ]),

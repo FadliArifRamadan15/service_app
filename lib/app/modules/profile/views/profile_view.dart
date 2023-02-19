@@ -152,10 +152,9 @@ class ProfileView extends GetView<ProfileController> {
                             SizedBox(
                               height: 30,
                             ),
-                            buildTextField('Nama Lengkap', 'Fadli Arif', false),
-                            buildTextField(
-                                'Email', 'fadliarif@gmail.com', false),
-                            buildTextField('Nomor Hp', '086321634781', false),
+                            buildTextField('Nama Lengkap', 'Users', false),
+                            buildTextField('Email', 'users@gmail.com', false),
+                            buildTextField('Nomor Hp', '', false),
                             SizedBox(
                               height: 30,
                             ),

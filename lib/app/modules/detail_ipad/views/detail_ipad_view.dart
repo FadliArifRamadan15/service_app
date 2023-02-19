@@ -55,7 +55,7 @@ class DetailIpadView extends GetView<DetailIpadController> {
                                         color: AppColors.PrimaryText),
                                   ),
                                   Text(
-                                    'Androidmu Disini',
+                                    'Ipadmu Disini',
                                     style: TextStyle(
                                         fontSize: 15,
                                         color: AppColors.PrimaryText),
@@ -113,7 +113,7 @@ class DetailIpadView extends GetView<DetailIpadController> {
                                 DataCell(Text('')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Layar LCD HP-mu Pecah')),
+                                DataCell(Text('Layar LCD Ipad-mu Pecah')),
                                 DataCell(Text('')),
                                 DataCell(Text('')),
                               ]),

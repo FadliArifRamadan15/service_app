@@ -55,7 +55,7 @@ class DetailIphoneView extends GetView<DetailIphoneController> {
                                         color: AppColors.PrimaryText),
                                   ),
                                   Text(
-                                    'Androidmu Disini',
+                                    'Iphonemu Disini',
                                     style: TextStyle(
                                         fontSize: 15,
                                         color: AppColors.PrimaryText),
