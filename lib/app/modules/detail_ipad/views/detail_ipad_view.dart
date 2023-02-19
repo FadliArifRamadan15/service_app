@@ -65,10 +65,13 @@ class DetailIpadView extends GetView<DetailIpadController> {
                               const Spacer(),
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(30),
-                                child: const CircleAvatar(
-                                  foregroundImage: NetworkImage(
-                                      'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
-                                  radius: 25,
+                                child: GestureDetector(
+                                  onTap: () => Get.toNamed(Routes.PROFILE),
+                                  child: const CircleAvatar(
+                                    foregroundImage: NetworkImage(
+                                        'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
+                                    radius: 25,
+                                  ),
                                 ),
                               )
                             ],
