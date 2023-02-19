@@ -108,17 +108,18 @@ class DetailIphoneView extends GetView<DetailIphoneController> {
                               DataColumn(label: Text('Biaya')),
                             ], rows: [
                               DataRow(cells: [
-                                DataCell(Text('Baterai Cepat Habis')),
+                                DataCell(Text('LCD Bergaris atau Noda Hita,')),
                                 DataCell(Text('')),
                                 DataCell(Text('')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Layar LCD HP-mu Pecah')),
+                                DataCell(Text(
+                                    'Layar LCD iPhone-mu Retak atau Pecah')),
                                 DataCell(Text('')),
                                 DataCell(Text('')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Kerusakan Port Charger')),
+                                DataCell(Text('Stuck Logo Apple')),
                                 DataCell(Text('')),
                                 DataCell(Text('')),
                               ]),
@@ -128,22 +129,23 @@ class DetailIphoneView extends GetView<DetailIphoneController> {
                                 DataCell(Text('')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Kerusakan Speaker')),
+                                DataCell(Text('Tombol Home Rusak')),
                                 DataCell(Text('')),
                                 DataCell(Text('')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Kerusakan Software')),
+                                DataCell(Text('Tombol Power Rusak')),
                                 DataCell(Text('')),
                                 DataCell(Text('')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Touchscreen Error')),
+                                DataCell(Text('Tombol Volume Rusak')),
                                 DataCell(Text('')),
                                 DataCell(Text('')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Baterai Kembung')),
+                                DataCell(
+                                    Text('Port Charger Goyang atau Rusak')),
                                 DataCell(Text('')),
                                 DataCell(Text('')),
                               ]),
