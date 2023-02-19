@@ -7,6 +7,10 @@ abstract class Routes {
   static const LOGIN = _Paths.LOGIN;
   static const SERVICE = _Paths.SERVICE;
   static const PROFILE = _Paths.PROFILE;
+  static const DETAIL_ANDROID = _Paths.DETAIL_ANDROID;
+  static const DETAIL_IPHONE = _Paths.DETAIL_IPHONE;
+  static const DETAIL_TABLET = _Paths.DETAIL_TABLET;
+  static const DETAIL_IPAD = _Paths.DETAIL_IPAD;
 }
 
 abstract class _Paths {
@@ -15,4 +19,8 @@ abstract class _Paths {
   static const LOGIN = '/login';
   static const SERVICE = '/service';
   static const PROFILE = '/profile';
+  static const DETAIL_ANDROID = '/detail-android';
+  static const DETAIL_IPHONE = '/detail-iphone';
+  static const DETAIL_TABLET = '/detail-tablet';
+  static const DETAIL_IPAD = '/detail-ipad';
 }

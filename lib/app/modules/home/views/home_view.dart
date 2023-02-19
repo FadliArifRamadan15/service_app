@@ -234,7 +234,8 @@ class HomeView extends GetView<HomeController> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     GestureDetector(
-                                      onTap: () => Get.toNamed(Routes.LOGIN),
+                                      onTap: () =>
+                                          Get.toNamed(Routes.DETAIL_ANDROID),
                                       child: Container(
                                         alignment: Alignment.center,
                                         width: 150,
@@ -256,7 +257,8 @@ class HomeView extends GetView<HomeController> {
                                       ),
                                     ),
                                     GestureDetector(
-                                      onTap: () => Get.toNamed(Routes.LOGIN),
+                                      onTap: () =>
+                                          Get.toNamed(Routes.DETAIL_IPHONE),
                                       child: Container(
                                         alignment: Alignment.center,
                                         width: 150,
@@ -284,7 +286,8 @@ class HomeView extends GetView<HomeController> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     GestureDetector(
-                                      onTap: () => Get.toNamed(Routes.LOGIN),
+                                      onTap: () =>
+                                          Get.toNamed(Routes.DETAIL_TABLET),
                                       child: Container(
                                         alignment: Alignment.center,
                                         width: 150,
@@ -307,7 +310,8 @@ class HomeView extends GetView<HomeController> {
                                       ),
                                     ),
                                     GestureDetector(
-                                      onTap: () => Get.toNamed(Routes.LOGIN),
+                                      onTap: () =>
+                                          Get.toNamed(Routes.DETAIL_IPAD),
                                       child: Container(
                                         alignment: Alignment.center,
                                         width: 150,
