@@ -49,13 +49,13 @@ class DetailAndroidView extends GetView<DetailAndroidController> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: const [
                                   Text(
-                                    'Detail Kerusakan',
+                                    'Service Kerusakan',
                                     style: TextStyle(
                                         fontSize: 20,
                                         color: AppColors.PrimaryText),
                                   ),
                                   Text(
-                                    'Periksa Kerusakan Gadgetmu disini',
+                                    'Androidmu Disini',
                                     style: TextStyle(
                                         fontSize: 15,
                                         color: AppColors.PrimaryText),
@@ -93,13 +93,62 @@ class DetailAndroidView extends GetView<DetailAndroidController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Keuntungan Service',
+                            'Detail Kerusakan',
                             style: TextStyle(
                                 color: AppColors.PrimaryText, fontSize: 25),
                           ),
                           SizedBox(
                             height: 20,
                           ),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: DataTable(columns: [
+                              DataColumn(label: Text('Kerusakan')),
+                              DataColumn(label: Text('Lama Pengerjaan')),
+                              DataColumn(label: Text('Biaya')),
+                            ], rows: [
+                              DataRow(cells: [
+                                DataCell(Text('Baterai Cepat Habis')),
+                                DataCell(Text('')),
+                                DataCell(Text('')),
+                              ]),
+                              DataRow(cells: [
+                                DataCell(Text('Layar LCD HP-mu Pecah')),
+                                DataCell(Text('')),
+                                DataCell(Text('')),
+                              ]),
+                              DataRow(cells: [
+                                DataCell(Text('Kerusakan Port Charger')),
+                                DataCell(Text('')),
+                                DataCell(Text('')),
+                              ]),
+                              DataRow(cells: [
+                                DataCell(Text('Kerusakan Kamera')),
+                                DataCell(Text('')),
+                                DataCell(Text('')),
+                              ]),
+                              DataRow(cells: [
+                                DataCell(Text('Kerusakan Speaker')),
+                                DataCell(Text('')),
+                                DataCell(Text('')),
+                              ]),
+                              DataRow(cells: [
+                                DataCell(Text('Kerusakan Software')),
+                                DataCell(Text('')),
+                                DataCell(Text('')),
+                              ]),
+                              DataRow(cells: [
+                                DataCell(Text('Touchscreen Error')),
+                                DataCell(Text('')),
+                                DataCell(Text('')),
+                              ]),
+                              DataRow(cells: [
+                                DataCell(Text('Baterai Kembung')),
+                                DataCell(Text('')),
+                                DataCell(Text('')),
+                              ]),
+                            ]),
+                          )
                         ],
                       ),
                     ),
