@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:service_app/app/utils/style/AppColors.dart';
 import 'package:service_app/app/utils/widget/SideBar.dart';
 import 'package:service_app/app/utils/widget/header.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../controllers/service_controller.dart';
 
 class ServiceView extends GetView<ServiceController> {
@@ -127,7 +128,7 @@ class ServiceView extends GetView<ServiceController> {
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: whatsapp,
                                   child: const Text(
                                     "Whatsapp",
                                     style: TextStyle(
@@ -150,4 +151,12 @@ class ServiceView extends GetView<ServiceController> {
       ),
     );
   }
+}
+
+whatsapp() async {
+  var contact = "+6281212129919";
+  var androidUrl =
+      "whatsapp://send?phone=$contact&text=Hallo PONSELMART, Saya mau konsultasi tentang service ponsel.";
+
+  await launchUrl(Uri.parse(androidUrl));
 }
