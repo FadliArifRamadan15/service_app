@@ -110,22 +110,22 @@ class DetailIpadView extends GetView<DetailIpadController> {
                               DataRow(cells: [
                                 DataCell(Text('Ganti LCD')),
                                 DataCell(Text('1 Jam')),
-                                DataCell(Text('Rp. 400.000 - Rp. 7.500.000')),
+                                DataCell(Text('Rp. 400.000 - Rp. 6.700.000')),
                               ]),
                               DataRow(cells: [
                                 DataCell(Text('Terkena Air')),
                                 DataCell(Text('6 Hari')),
-                                DataCell(Text('Rp. 600.000 - Rp. 9.500.000')),
+                                DataCell(Text('Rp. 600.000 - Rp. 4.800.000')),
                               ]),
                               DataRow(cells: [
                                 DataCell(Text('Tidak Bisa di Charger')),
                                 DataCell(Text('3 Hari')),
-                                DataCell(Text('Rp. 500.000 - Rp. 5.500.000')),
+                                DataCell(Text('Rp. 500.000 - Rp. 4.750.000')),
                               ]),
                               DataRow(cells: [
                                 DataCell(Text('Stuck Logo Apple')),
                                 DataCell(Text('3 Hari')),
-                                DataCell(Text('Rp. 500.000 - Rp. 6.500.000')),
+                                DataCell(Text('Rp. 500.000 - Rp. 4.850.000')),
                               ]),
                               DataRow(cells: [
                                 DataCell(Text('Tombol Home Rusak')),
@@ -140,7 +140,7 @@ class DetailIpadView extends GetView<DetailIpadController> {
                               DataRow(cells: [
                                 DataCell(Text('Ganti Baterai')),
                                 DataCell(Text('1 Jam')),
-                                DataCell(Text('Rp. 400.000 - Rp. 3.500.000')),
+                                DataCell(Text('Rp. 400.000 - Rp. 2.670.000')),
                               ]),
                               DataRow(cells: [
                                 DataCell(
