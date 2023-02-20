@@ -4,11 +4,13 @@ import 'package:get/get.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:service_app/app/utils/style/AppColors.dart';
 
+import '../../../controller/auth_controller.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
   @override
+  final authC = Get.find<AuthController>();
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.PrimaryBg,
@@ -98,7 +100,7 @@ class LoginView extends GetView<LoginController> {
                       ),
                       FloatingActionButton.extended(
                         backgroundColor: AppColors.PrimaryBg,
-                        onPressed: () => Get.toNamed(Routes.HOME),
+                        onPressed: () => authC.signInWithGoogle(),
                         label: const Text(
                           'Masuk Akun Google',
                           style: TextStyle(color: Colors.grey),

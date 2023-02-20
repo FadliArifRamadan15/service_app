@@ -4,11 +4,13 @@ import 'package:ionicons/ionicons.dart';
 import 'package:service_app/app/utils/style/AppColors.dart';
 import 'package:service_app/app/utils/widget/SideBar.dart';
 import 'package:service_app/app/utils/widget/header.dart';
+import '../../../controller/auth_controller.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
   final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
+  final authC = Get.find<AuthController>();
 
   bool isObscurePassword = true;
   @override
@@ -79,8 +81,7 @@ class ProfileView extends GetView<ProfileController> {
                                       child: const Text('Tidak'),
                                     ),
                                     confirm: ElevatedButton(
-                                      onPressed: () =>
-                                          Get.toNamed(Routes.LOGIN),
+                                      onPressed: () => authC.logout(),
                                       child: const Text('Ya'),
                                     ),
                                   );
