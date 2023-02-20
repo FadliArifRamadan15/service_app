@@ -7,9 +7,11 @@ import 'package:service_app/app/utils/style/AppColors.dart';
 import 'package:service_app/app/utils/widget/header.dart';
 import 'package:service_app/app/utils/widget/sideBar.dart';
 
+import '../../../controller/auth_controller.dart';
 import '../controllers/detail_iphone_controller.dart';
 
 class DetailIphoneView extends GetView<DetailIphoneController> {
+  final authC = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,9 +69,9 @@ class DetailIphoneView extends GetView<DetailIphoneController> {
                                 borderRadius: BorderRadius.circular(30),
                                 child: GestureDetector(
                                   onTap: () => Get.toNamed(Routes.PROFILE),
-                                  child: const CircleAvatar(
+                                  child: CircleAvatar(
                                     foregroundImage: NetworkImage(
-                                        'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
+                                        authC.auth.currentUser!.photoURL!),
                                     radius: 25,
                                   ),
                                 ),

@@ -2,7 +2,7 @@
     package="com.example.service_app">
    <application
         android:usesCleartextTraffic="true"
-        android:label="service_app"
+        android:label="PonselMart"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

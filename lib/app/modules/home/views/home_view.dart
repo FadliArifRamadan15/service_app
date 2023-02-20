@@ -4,12 +4,13 @@ import 'package:ionicons/ionicons.dart';
 import 'package:service_app/app/utils/style/AppColors.dart';
 import 'package:service_app/app/utils/widget/SideBar.dart';
 import 'package:service_app/app/utils/widget/header.dart';
+import '../../../controller/auth_controller.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
-
+  final authC = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,9 +72,9 @@ class HomeView extends GetView<HomeController> {
                                 borderRadius: BorderRadius.circular(30),
                                 child: GestureDetector(
                                   onTap: () => Get.toNamed(Routes.PROFILE),
-                                  child: const CircleAvatar(
+                                  child: CircleAvatar(
                                     foregroundImage: NetworkImage(
-                                        'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
+                                        authC.auth.currentUser!.photoURL!),
                                     radius: 25,
                                   ),
                                 ),
@@ -99,12 +100,12 @@ class HomeView extends GetView<HomeController> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                          const Text(
                             'Keuntungan Service',
                             style: TextStyle(
                                 color: AppColors.PrimaryText, fontSize: 25),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           // keuntungan service
@@ -120,25 +121,25 @@ class HomeView extends GetView<HomeController> {
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20),
                                       color: AppColors.SecondaryBg),
-                                  margin: EdgeInsets.all(20),
-                                  padding: EdgeInsets.all(20),
+                                  margin: const EdgeInsets.all(20),
+                                  padding: const EdgeInsets.all(20),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Row(
-                                        children: [
+                                        children: const [
                                           Icon(Ionicons.time_outline),
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         '1. Dapat Estimasi Waktu',
                                         style: TextStyle(fontSize: 25),
                                       ),
-                                      Text(
+                                      const Text(
                                         'Lama Pengerjaan Service',
                                         style: TextStyle(fontSize: 20),
                                       ),
@@ -150,25 +151,25 @@ class HomeView extends GetView<HomeController> {
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20),
                                       color: AppColors.SecondaryBg),
-                                  margin: EdgeInsets.all(20),
-                                  padding: EdgeInsets.all(20),
+                                  margin: const EdgeInsets.all(20),
+                                  padding: const EdgeInsets.all(20),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Row(
-                                        children: [
+                                        children: const [
                                           Icon(Ionicons.cash_outline),
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         '2. Bisa Cek Biaya Service',
                                         style: TextStyle(fontSize: 25),
                                       ),
-                                      Text(
+                                      const Text(
                                         'Dapat Melihat Berapa Biayanya',
                                         style: TextStyle(fontSize: 20),
                                       ),
@@ -180,25 +181,25 @@ class HomeView extends GetView<HomeController> {
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20),
                                       color: AppColors.SecondaryBg),
-                                  margin: EdgeInsets.all(20),
-                                  padding: EdgeInsets.all(20),
+                                  margin: const EdgeInsets.all(20),
+                                  padding: const EdgeInsets.all(20),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Row(
-                                        children: [
+                                        children: const [
                                           Icon(Ionicons.chatbubbles_outline),
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 30,
                                       ),
-                                      Text(
+                                      const Text(
                                         '3. Dapat Konsultasi Teknisi',
                                         style: TextStyle(fontSize: 25),
                                       ),
-                                      Text(
+                                      const Text(
                                         'Teknisi Handal',
                                         style: TextStyle(fontSize: 20),
                                       ),
@@ -208,13 +209,13 @@ class HomeView extends GetView<HomeController> {
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Row(
                             children: [
                               Column(
-                                children: [
+                                children: const [
                                   Text(
                                     'Daftar Service',
                                     style: TextStyle(
@@ -228,119 +229,114 @@ class HomeView extends GetView<HomeController> {
                               ),
                             ],
                           ),
-                          Container(
-                            // padding: EdgeInsets.all(20),
-                            child: Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    GestureDetector(
-                                      onTap: () =>
-                                          Get.toNamed(Routes.DETAIL_ANDROID),
-                                      child: Container(
-                                        alignment: Alignment.center,
-                                        width: 150,
-                                        height: 150,
-                                        decoration: BoxDecoration(
-                                            color: AppColors.SecondaryBg),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(Ionicons.logo_android,
-                                                size: 60),
-                                            Text(
-                                              "Android",
-                                              style: TextStyle(fontSize: 25),
-                                            ),
-                                          ],
-                                        ),
+                          Column(
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  GestureDetector(
+                                    onTap: () =>
+                                        Get.toNamed(Routes.DETAIL_ANDROID),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      width: 150,
+                                      height: 150,
+                                      decoration: const BoxDecoration(
+                                          color: AppColors.SecondaryBg),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: const [
+                                          Icon(Ionicons.logo_android, size: 60),
+                                          Text(
+                                            "Android",
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                    GestureDetector(
-                                      onTap: () =>
-                                          Get.toNamed(Routes.DETAIL_IPHONE),
-                                      child: Container(
-                                        alignment: Alignment.center,
-                                        width: 150,
-                                        height: 150,
-                                        decoration: BoxDecoration(
-                                            color: AppColors.SecondaryBg),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(Ionicons.logo_apple, size: 60),
-                                            Text(
-                                              "Iphone",
-                                              style: TextStyle(fontSize: 25),
-                                            ),
-                                          ],
-                                        ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () =>
+                                        Get.toNamed(Routes.DETAIL_IPHONE),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      width: 150,
+                                      height: 150,
+                                      decoration: const BoxDecoration(
+                                          color: AppColors.SecondaryBg),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: const [
+                                          Icon(Ionicons.logo_apple, size: 60),
+                                          Text(
+                                            "Iphone",
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  ],
-                                ),
-                                SizedBox(height: 20),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    GestureDetector(
-                                      onTap: () =>
-                                          Get.toNamed(Routes.DETAIL_TABLET),
-                                      child: Container(
-                                        alignment: Alignment.center,
-                                        width: 150,
-                                        height: 150,
-                                        decoration: BoxDecoration(
-                                            color: AppColors.SecondaryBg),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                                Ionicons.tablet_landscape_sharp,
-                                                size: 60),
-                                            Text(
-                                              "Tablet",
-                                              style: TextStyle(fontSize: 25),
-                                            ),
-                                          ],
-                                        ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  GestureDetector(
+                                    onTap: () =>
+                                        Get.toNamed(Routes.DETAIL_TABLET),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      width: 150,
+                                      height: 150,
+                                      decoration: const BoxDecoration(
+                                          color: AppColors.SecondaryBg),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: const [
+                                          Icon(Ionicons.tablet_landscape_sharp,
+                                              size: 60),
+                                          Text(
+                                            "Tablet",
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                    GestureDetector(
-                                      onTap: () =>
-                                          Get.toNamed(Routes.DETAIL_IPAD),
-                                      child: Container(
-                                        alignment: Alignment.center,
-                                        width: 150,
-                                        height: 150,
-                                        decoration: BoxDecoration(
-                                            color: AppColors.SecondaryBg),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Icon(
-                                              Ionicons.tablet_landscape_sharp,
-                                              size: 60,
-                                            ),
-                                            Text(
-                                              "Ipad",
-                                              style: TextStyle(fontSize: 25),
-                                            ),
-                                          ],
-                                        ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () =>
+                                        Get.toNamed(Routes.DETAIL_IPAD),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      width: 150,
+                                      height: 150,
+                                      decoration: const BoxDecoration(
+                                          color: AppColors.SecondaryBg),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: const [
+                                          Icon(
+                                            Ionicons.tablet_landscape_sharp,
+                                            size: 60,
+                                          ),
+                                          Text(
+                                            "Ipad",
+                                            style: TextStyle(fontSize: 25),
+                                          ),
+                                        ],
                                       ),
                                     ),
-                                  ],
-                                ),
-                              ],
-                            ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           )
                         ],
                       ),

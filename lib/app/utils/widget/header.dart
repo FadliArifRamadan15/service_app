@@ -4,6 +4,8 @@ import 'package:ionicons/ionicons.dart';
 import 'package:service_app/app/routes/app_pages.dart';
 import 'package:service_app/app/utils/style/AppColors.dart';
 
+import '../../controller/auth_controller.dart';
+
 class header extends StatelessWidget {
   const header({
     Key? key,
@@ -11,6 +13,7 @@ class header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final authC = Get.find<AuthController>();
     return SizedBox(
       height: Get.height * 0.1,
       child: Padding(
@@ -44,7 +47,7 @@ class header extends StatelessWidget {
                     child: const Text('Tidak'),
                   ),
                   confirm: ElevatedButton(
-                    onPressed: () => Get.toNamed(Routes.LOGIN),
+                    onPressed: () => authC.logout(),
                     child: const Text('Ya'),
                   ),
                 );

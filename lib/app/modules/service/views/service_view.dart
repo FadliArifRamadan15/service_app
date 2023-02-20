@@ -5,10 +5,13 @@ import 'package:service_app/app/utils/style/AppColors.dart';
 import 'package:service_app/app/utils/widget/SideBar.dart';
 import 'package:service_app/app/utils/widget/header.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../controller/auth_controller.dart';
 import '../controllers/service_controller.dart';
 
 class ServiceView extends GetView<ServiceController> {
   final GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
+
+  final authC = Get.find<AuthController>();
 
   ServiceView({super.key});
 
@@ -73,9 +76,9 @@ class ServiceView extends GetView<ServiceController> {
                                 borderRadius: BorderRadius.circular(30),
                                 child: GestureDetector(
                                   onTap: () => Get.toNamed(Routes.PROFILE),
-                                  child: const CircleAvatar(
+                                  child: CircleAvatar(
                                     foregroundImage: NetworkImage(
-                                        'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
+                                        authC.auth.currentUser!.photoURL!),
                                     radius: 25,
                                   ),
                                 ),
@@ -118,9 +121,12 @@ class ServiceView extends GetView<ServiceController> {
                                 'Jl. Petratean No. 62 Cirebon',
                                 style: TextStyle(fontSize: 20),
                               ),
-                              Image.asset(
-                                'assets/images/Maps.png',
-                                height: Get.height * 0.52,
+                              GestureDetector(
+                                onTap: () => maps(),
+                                child: Image.asset(
+                                  'assets/images/Maps.png',
+                                  height: Get.height * 0.52,
+                                ),
                               ),
                               SizedBox(
                                 width: 200,
@@ -161,6 +167,12 @@ whatsapp() async {
   var contact = "+6281212129919";
   var androidUrl =
       "whatsapp://send?phone=$contact&text=Hallo PONSELMART, Saya mau konsultasi tentang service ponsel.";
+
+  await launchUrl(Uri.parse(androidUrl));
+}
+
+maps() async {
+  var androidUrl = "https://goo.gl/maps/8LK7nFnfhyfm38obA";
 
   await launchUrl(Uri.parse(androidUrl));
 }

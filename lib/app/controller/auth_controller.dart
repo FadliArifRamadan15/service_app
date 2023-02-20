@@ -1,10 +1,16 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../routes/app_pages.dart';
 
 class AuthController extends GetxController {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
+  FirebaseAuth auth = FirebaseAuth.instance;
+  UserCredential? _userCredential;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   Future signInWithGoogle() async {
     // Trigger the authentication flow
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -21,9 +27,14 @@ class AuthController extends GetxController {
 
     print(googleUser!.email);
     // Once signed in, return the UserCredential
-    return await FirebaseAuth.instance
+    await auth
         .signInWithCredential(credential)
-        .then((value) => Get.offAllNamed(Routes.HOME));
+        .then((value) => _userCredential = value);
+
+    // firebase
+    // CollectionReference users = firestore.collection('users');
+
+    Get.offAllNamed(Routes.HOME);
   }
 
   Future logout() async {

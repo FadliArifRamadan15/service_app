@@ -25,7 +25,7 @@ Future<void> main() async {
         }
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: "Flutter Task Management App",
+          title: "PonselMart",
           initialRoute: snapshot.data != null ? Routes.HOME : Routes.LOGIN,
           getPages: AppPages.routes,
         );

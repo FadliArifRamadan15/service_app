@@ -143,7 +143,7 @@ class ProfileView extends GetView<ProfileController> {
                                       image: DecorationImage(
                                         fit: BoxFit.cover,
                                         image: NetworkImage(
-                                            'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
+                                            authC.auth.currentUser!.photoURL!),
                                       ),
                                     ),
                                   ),
@@ -153,8 +153,10 @@ class ProfileView extends GetView<ProfileController> {
                             SizedBox(
                               height: 30,
                             ),
-                            buildTextField('Nama Lengkap', 'Users', false),
-                            buildTextField('Email', 'users@gmail.com', false),
+                            buildTextField('Nama Lengkap',
+                                authC.auth.currentUser!.displayName!, false),
+                            buildTextField(
+                                'Email', authC.auth.currentUser!.email!, false),
                             buildTextField('Nomor Hp', '', false),
                             SizedBox(
                               height: 30,
