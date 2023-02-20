@@ -65,10 +65,13 @@ class DetailTabletView extends GetView<DetailTabletController> {
                               const Spacer(),
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(30),
-                                child: const CircleAvatar(
-                                  foregroundImage: NetworkImage(
-                                      'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
-                                  radius: 25,
+                                child: GestureDetector(
+                                  onTap: () => Get.toNamed(Routes.PROFILE),
+                                  child: const CircleAvatar(
+                                    foregroundImage: NetworkImage(
+                                        'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
+                                    radius: 25,
+                                  ),
                                 ),
                               )
                             ],
@@ -108,44 +111,44 @@ class DetailTabletView extends GetView<DetailTabletController> {
                               DataColumn(label: Text('Biaya')),
                             ], rows: [
                               DataRow(cells: [
-                                DataCell(Text('Baterai Cepat Habis')),
-                                DataCell(Text('')),
-                                DataCell(Text('')),
+                                DataCell(Text('Ganti Baterai')),
+                                DataCell(Text('1 Jam')),
+                                DataCell(Text('Rp. 350.000 - Rp. 1.600.000')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Layar LCD Tablte-mu Pecah')),
-                                DataCell(Text('')),
-                                DataCell(Text('')),
+                                DataCell(Text('Ganti LCD')),
+                                DataCell(Text('1 Jam')),
+                                DataCell(Text('Rp. 750.000 - Rp. 2.800.000')),
                               ]),
                               DataRow(cells: [
                                 DataCell(Text('Kerusakan Port Charger')),
-                                DataCell(Text('')),
-                                DataCell(Text('')),
+                                DataCell(Text('40 Menit')),
+                                DataCell(Text('Rp. 230.000 - Rp. 370.000')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Kerusakan Kamera')),
-                                DataCell(Text('')),
-                                DataCell(Text('')),
+                                DataCell(Text('Lupa Pola/Password')),
+                                DataCell(Text('30 Menit')),
+                                DataCell(Text('Rp. 200.000 - Rp. 350.000')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Kerusakan Speaker')),
-                                DataCell(Text('')),
-                                DataCell(Text('')),
+                                DataCell(Text('Terkena Air')),
+                                DataCell(Text('5 Hari')),
+                                DataCell(Text('Rp. 300.000 - Rp. 2.700.000')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Kerusakan Software')),
-                                DataCell(Text('')),
-                                DataCell(Text('')),
+                                DataCell(Text('Backup Data')),
+                                DataCell(Text('15 Menit')),
+                                DataCell(Text('Rp. 100.000 - Rp. 250.000')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Touchscreen Error')),
-                                DataCell(Text('')),
-                                DataCell(Text('')),
+                                DataCell(Text('Mati Total')),
+                                DataCell(Text('2 Hari')),
+                                DataCell(Text('Rp. 500.000 - Rp. 1.950.000')),
                               ]),
                               DataRow(cells: [
-                                DataCell(Text('Baterai Kembung')),
-                                DataCell(Text('')),
-                                DataCell(Text('')),
+                                DataCell(Text('Restore Data')),
+                                DataCell(Text('3 Hari')),
+                                DataCell(Text('Rp. 350.000 - Rp. 600.000')),
                               ]),
                             ]),
                           )

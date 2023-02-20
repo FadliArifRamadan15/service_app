@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:service_app/app/routes/app_pages.dart';
 import 'package:service_app/app/utils/style/AppColors.dart';
 import 'package:service_app/app/utils/widget/SideBar.dart';
 import 'package:service_app/app/utils/widget/header.dart';
@@ -70,10 +71,13 @@ class ServiceView extends GetView<ServiceController> {
                               const Spacer(),
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(30),
-                                child: const CircleAvatar(
-                                  foregroundImage: NetworkImage(
-                                      'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
-                                  radius: 25,
+                                child: GestureDetector(
+                                  onTap: () => Get.toNamed(Routes.PROFILE),
+                                  child: const CircleAvatar(
+                                    foregroundImage: NetworkImage(
+                                        'https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg'),
+                                    radius: 25,
+                                  ),
                                 ),
                               )
                             ],

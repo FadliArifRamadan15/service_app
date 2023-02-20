@@ -57,21 +57,29 @@ class AppPages {
       name: _Paths.DETAIL_ANDROID,
       page: () => DetailAndroidView(),
       binding: DetailAndroidBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: Duration(seconds: 1),
     ),
     GetPage(
       name: _Paths.DETAIL_IPHONE,
       page: () => DetailIphoneView(),
       binding: DetailIphoneBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: Duration(seconds: 1),
     ),
     GetPage(
       name: _Paths.DETAIL_TABLET,
       page: () => DetailTabletView(),
       binding: DetailTabletBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: Duration(seconds: 1),
     ),
     GetPage(
       name: _Paths.DETAIL_IPAD,
       page: () => DetailIpadView(),
       binding: DetailIpadBinding(),
+      transition: Transition.leftToRight,
+      transitionDuration: Duration(seconds: 1),
     ),
   ];
 }
