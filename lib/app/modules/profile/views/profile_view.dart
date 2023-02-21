@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:service_app/app/utils/style/AppColors.dart';
 import 'package:service_app/app/utils/widget/SideBar.dart';
@@ -154,9 +155,9 @@ class ProfileView extends GetView<ProfileController> {
                               height: 30,
                             ),
                             buildTextField('Nama Lengkap',
-                                authC.auth.currentUser!.displayName!, false),
+                                authC.auth.currentUser!.displayName!),
                             buildTextField(
-                                'Email', authC.auth.currentUser!.email!, false),
+                                'Email', authC.auth.currentUser!.email!),
                           ],
                         ),
                       ),
@@ -171,19 +172,14 @@ class ProfileView extends GetView<ProfileController> {
     );
   }
 
-  Widget buildTextField(
-      String LabelText, String placeholder, bool isPasswordTextField) {
+  Widget buildTextField(String LabelText, String placeholder) {
     return Padding(
       padding: EdgeInsets.only(bottom: 30),
       child: TextField(
-        obscureText: isPasswordTextField ? isObscurePassword : false,
+        obscureText: true,
+        readOnly: true,
         decoration: InputDecoration(
-          suffixIcon: isPasswordTextField
-              ? IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.remove_red_eye),
-                )
-              : null,
+          enabled: false,
           contentPadding: EdgeInsets.only(bottom: 5),
           labelText: LabelText,
           floatingLabelBehavior: FloatingLabelBehavior.always,
