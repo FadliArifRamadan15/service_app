@@ -41,6 +41,7 @@ class AuthController extends GetxController {
         'name': googleUser.displayName,
         'email': googleUser.email,
         'photo': googleUser.photoUrl,
+        'nohp': "-",
         'creadAt': _userCredential!.user!.metadata.creationTime.toString(),
         'lastloginAt':
             _userCredential!.user!.metadata.lastSignInTime.toString(),
