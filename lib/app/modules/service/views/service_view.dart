@@ -111,21 +111,28 @@ class ServiceView extends GetView<ServiceController> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               SizedBox(
-                                height: Get.height * 0.05,
+                                height: Get.height * 0.04,
                               ),
                               const Text(
                                 'PONSELMART',
                                 style: TextStyle(fontSize: 40),
                               ),
+                              SizedBox(
+                                height: Get.height * 0.01,
+                              ),
                               const Text(
-                                'Jl. Petratean No. 62 Cirebon',
+                                'Jl. Ciremai Raya No.32',
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              const Text(
+                                'Harjamukti Cirebon',
                                 style: TextStyle(fontSize: 20),
                               ),
                               GestureDetector(
                                 onTap: () => maps(),
                                 child: Image.asset(
-                                  'assets/images/Maps.png',
-                                  height: Get.height * 0.52,
+                                  'assets/images/Maps.jpg',
+                                  height: Get.height * 0.495,
                                 ),
                               ),
                               SizedBox(
