@@ -157,26 +157,6 @@ class ProfileView extends GetView<ProfileController> {
                                 authC.auth.currentUser!.displayName!, false),
                             buildTextField(
                                 'Email', authC.auth.currentUser!.email!, false),
-                            buildTextField('Nomor Hp', '', false),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            Column(
-                              children: [
-                                FloatingActionButton.extended(
-                                  backgroundColor: AppColors.SecondaryBg,
-                                  onPressed: () => Get.toNamed(Routes.HOME),
-                                  label: const Text(
-                                    'Simpan',
-                                    style: TextStyle(fontSize: 15),
-                                  ),
-                                  icon: const Icon(
-                                    Ionicons.save,
-                                    color: Colors.white,
-                                  ),
-                                )
-                              ],
-                            ),
                           ],
                         ),
                       ),
